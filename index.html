@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Cross Presents</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        /* Intro Image Styling */
+        .intro-image {
+            width: 80%;
+            max-width: 900px;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Full screen animation */
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        #sound {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://f.playcode.io/p-2007073/v-1/dadb357e-4ee7-4fdb-9855-ce5b845dbe8e/01c7c486-482e-4e0a-8ebf-ffa4801e12ad.gif" alt="Intro Logo" class="intro-image">
+    <audio id="sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_8eb94c2d78.mp3"></audio>
+
+    <script>
+        // Play sound on load
+        window.onload = function() {
+            const sound = document.getElementById('sound');
+            sound.play();
+        };
+
+        // Automatically redirect to main page after 4 seconds
+        setTimeout(function() {
+            document.querySelector('body').style.animation = 'fadeOut 1s ease-out forwards';
+            setTimeout(() => {
+                window.location.href = 'computer';
+            }, 1000);
+        }, 4000);
+    </script>
+</body>
+</html>
